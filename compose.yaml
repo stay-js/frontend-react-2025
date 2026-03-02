@@ -1,0 +1,20 @@
+name: Frontend React 2025
+
+services:
+  frontend:
+    image: znagyy/frontend
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    volumes:
+      - ./frontend:/app
+      - ./.env:/app/.env:ro
+      - /app/node_modules
+      - shared_pnpm:/shared_pnpm
+    ports:
+      - "3000:3000"
+    pull_policy: build
+
+volumes:
+  shared_pnpm:
+    external: true
