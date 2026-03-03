@@ -14,6 +14,7 @@ else
     docker volume create shared_pnpm
 fi
 
+echo "Installing Frontend dependencies on host machine..."
 cd frontend && pnpm install
 
 docker compose up -d
