@@ -14,4 +14,6 @@ else
     docker volume create shared_pnpm
 fi
 
+cd frontend && pnpm install
+
 docker compose up -d
